@@ -1,0 +1,1 @@
+The common part for the client & server! This  is where the exchnged object' s classes must be placed!
