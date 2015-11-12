@@ -1,0 +1,1 @@
+The base lib that all projects depend on should be built first and present in all other projects!
