@@ -3,24 +3,19 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
-import net.is_bg.ltf.db.SelectSqlStatement;
-import net.is_bg.ltf.db.UpdateSqlStatement;
+import net.is_bg.ltf.db.common.BindVariableData;
+import net.is_bg.ltf.db.common.SelectSqlStatement;
+import net.is_bg.ltf.db.common.UpdateSqlStatement;
 import net.is_bg.ltf.update.register.common.utils.CommonBindVariableDataImpl;
+import net.is_bg.ltf.update.register.common.utils.CommonBindVariableDataImpl.BindVariableInfo;
 import net.is_bg.ltf.update.register.common.utils.IBindVariableData;
 import net.is_bg.ltf.update.register.common.utils.IBindVariableInfo;
 import net.is_bg.web.base.sql.IRegServiceSelectSqlStatement;
 import net.is_bg.web.base.sql.IRegServiceSqlParams;
 import net.is_bg.web.base.sql.IRegServiceSqlStatement;
 
-/*
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import net.is_bg.ltf.db.SelectSqlStatement;
-import net.is_bg.ltf.db.UpdateSqlStatement;
-import net.is_bg.web.base.sql.IRegServiceSelectSqlStatement;
-import net.is_bg.web.base.sql.IRegServiceSqlStatement;
-*/
 
 
 public class SqlUtils {
@@ -55,9 +50,17 @@ public class SqlUtils {
 	 * @param inParams
 	 * @return
 	 */
-	public static IBindVariableData  toClientParams(IRegServiceSqlParams<Integer, IBindVariableInfo> inParams){
-		if(inParams == null || inParams.getParams() == null) return new CommonBindVariableDataImpl();
-		return new CommonBindVariableDataImpl(inParams.getParams());
+	public static BindVariableData  toClientParams(IRegServiceSqlParams<Integer, IBindVariableInfo> inParams){
+		BindVariableData data = new  BindVariableData();
+		if(inParams == null || inParams.getParams() == null) return data;
+		Map<Integer, IBindVariableInfo> p =   inParams.getParams();
+		for(Entry<Integer, IBindVariableInfo> e: p.entrySet()){
+			Integer i = e.getKey();
+			IBindVariableInfo val = e.getValue();
+			net.is_bg.ltf.db.common.BindVariableInfo info =new net.is_bg.ltf.db.common.BindVariableInfo(val.getValue(), val.getType(), val.getPosition());
+			data.getValues().put(i, info);
+		}
+		return data;
 	}
 	
 	

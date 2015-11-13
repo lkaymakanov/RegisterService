@@ -1,14 +1,13 @@
 package net.is_bg.ltf.update.register.test;
 
 
-import net.is_bg.ltf.db.UpdateSqlStatement;
+import net.is_bg.ltf.db.common.UpdateSqlStatement;
 import net.is_bg.ltf.update.register.common.sql.registertourist.v1.RegisterTouristInsertV1;
 import net.is_bg.ltf.update.register.common.strategy.CompressionStrategyFactory.COMRP_STRATEGY;
 import net.is_bg.ltf.update.register.common.strategy.Strategy;
 
 import java.util.Date;
 
-import net.is_bg.ltf.db.UpdateSqlStatement;
 import net.is_bg.ltf.update.register.common.sql.registertourist.v1.RegisterTouristInsertV1;
 import net.is_bg.ltf.update.register.common.strategy.Strategy;
 import net.is_bg.ltf.update.register.common.strategy.StrategyUtil;

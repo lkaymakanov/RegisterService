@@ -1,6 +1,10 @@
-package net.is_bg.ltf.db;
+package net.is_bg.ltf.update.register.services;
 
 import java.sql.Connection;
+
+import net.is_bg.ltf.db.common.JDBCException;
+import net.is_bg.ltf.db.common.interfaces.IConnectionFactory;
+
 import java.sql.SQLException;
 
 import javax.naming.NamingException;

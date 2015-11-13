@@ -1,9 +1,12 @@
-package net.is_bg.ltf.db;
+package net.is_bg.ltf.update.register.tourist;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import net.is_bg.ltf.db.common.SelectSqlStatement;
 
 
 public class SelectPagingSqlStatement extends SelectSqlStatement {

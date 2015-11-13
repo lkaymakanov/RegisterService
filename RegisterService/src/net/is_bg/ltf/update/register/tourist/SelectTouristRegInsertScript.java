@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-import net.is_bg.ltf.db.SelectPagingSqlStatement;
 import net.is_bg.ltf.update.register.services.SqlUtils;
 
 public class SelectTouristRegInsertScript extends SelectPagingSqlStatement{

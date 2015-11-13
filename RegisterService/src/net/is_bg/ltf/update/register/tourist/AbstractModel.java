@@ -1,7 +1,6 @@
-package net.is_bg.ltf.db;
+package net.is_bg.ltf.update.register.tourist;
 
 import java.io.Serializable;
-
 
 public abstract class AbstractModel implements Serializable{
 	private static final long serialVersionUID = -2245832058738573909L;

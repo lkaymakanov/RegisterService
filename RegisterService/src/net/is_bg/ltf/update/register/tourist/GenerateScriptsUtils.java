@@ -45,7 +45,7 @@ public class GenerateScriptsUtils {
 		if(object == null) return null;
 		// TODO Auto-generated method stub
 		StringBuilder builder = new StringBuilder();
-		SelectTouristRegInsertScript sel  = ServiceProvider.getServiceWrapper().getDao().getTouristInsertScript(object.getCurrentPage(),object.getMunicipalityList(), object.getMaxInsertDate());
+		SelectTouristRegInsertScript sel  = ServiceProvider.getServiceWrapper().getDao().getTouristInsertScript(object.getCurrentPage(), /* object.getMunicipalityList()*/ "", object.getMaxInsertDate());
 		
 		//get script
 		String script = sel.getTouristRegScript();
